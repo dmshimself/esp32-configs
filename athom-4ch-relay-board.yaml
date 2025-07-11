@@ -100,11 +100,13 @@ dashboard_import:
 remote_receiver:
   pin: GPIO17
   dump: rc_switch
+  id: remote_receiver
 
 binary_sensor:
   - platform: status
     name: "Status"
     entity_category: "diagnostic"
+    id: status
 
   - platform: gpio
     pin:
@@ -113,6 +115,7 @@ binary_sensor:
         input: true
       inverted: true
     name: "Power Button1"
+    id: power_button1
     disabled_by_default: true
     on_multi_click:
       - timing:
@@ -131,6 +134,7 @@ binary_sensor:
         input: true
       inverted: true
     name: "Power Button2"
+    id: power_button2
     disabled_by_default: true
     on_multi_click:
       - timing:
@@ -149,6 +153,7 @@ binary_sensor:
         input: true
       inverted: true
     name: "Power Button3"
+    id: power_button3
     disabled_by_default: true
     on_multi_click:
       - timing:
@@ -167,6 +172,7 @@ binary_sensor:
         input: true
       inverted: true
     name: "Power Button4"
+    id: power_button4
     disabled_by_default: true
     on_multi_click:
       - timing:
@@ -196,6 +202,7 @@ sensor:
   - platform: copy # Reports the WiFi signal strength in %
     source_id: wifi_signal_db
     name: "WiFi Signal Percent"
+    id: wifi_signal_percent
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "Signal %"
@@ -205,6 +212,7 @@ sensor:
 button:
   - platform: restart
     name: "Restart"
+    id: restart
     entity_category: "config"
 
   - platform: factory_reset
@@ -214,6 +222,7 @@ button:
 
   - platform: safe_mode
     name: "Safe Mode"
+    id: safe_mode
     internal: false
     entity_category: "config"
 
@@ -246,6 +255,7 @@ switch:
 light:
   - platform: status_led
     name: "Status LED"
+    id: status_led
     disabled_by_default: true
     pin: GPIO15
 
@@ -253,12 +263,15 @@ text_sensor:
   - platform: wifi_info
     ip_address:
       name: "IP Address"
+      id: ip_address
       entity_category: "diagnostic"
     ssid:
       name: "Connected SSID"
+      id: connected_ssid
       entity_category: "diagnostic"
     mac_address:
       name: "Mac Address"
+      id: mac_address
       entity_category: "diagnostic"
 
   #  Creates a sensor showing when the device was last restarted
