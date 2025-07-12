@@ -98,9 +98,21 @@ dashboard_import:
 #   active: true
 
 remote_receiver:
-  pin: GPIO17
-  dump: rc_switch
   id: remote_receiver
+  pin: GPIO17
+  dump: all
+  tolerance: 50%
+  filter: 250us
+  idle: 4ms
+
+
+#remote_receiver:
+#  - id: remote_receiver
+#  dump: all
+#  # Settings to optimize recognition of RF devices
+#  tolerance: 50%
+#  filter: 250us
+#  idle: 4ms
 
 binary_sensor:
   - platform: status
