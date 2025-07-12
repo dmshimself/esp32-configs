@@ -99,7 +99,7 @@ dashboard_import:
 
 remote_receiver:
   id: remote_receiver
-  pin: GPIO17
+  pin: GPIO16
   dump: all
   tolerance: 50%
   filter: 250us
