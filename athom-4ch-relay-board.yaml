@@ -78,12 +78,12 @@ wifi:
   # Define dns domain / suffix to add to hostname
   domain: "${dns_domain}"
 
-captive_portal:
+#captive_portal:
 
 #improv_serial:
 
-esp32_improv:
-  authorizer: none
+#esp32_improv:
+#  authorizer: none
 
 dashboard_import:
   package_import_url: github://athom-tech/esp32-configs/athom-4ch-relay-board.yaml
@@ -94,8 +94,8 @@ esp32_ble_tracker:
     window: 1100ms
     active: true
 
-# bluetooth_proxy:
-#   active: true
+bluetooth_proxy:
+  active: true
 
 remote_receiver:
   id: remote_receiver
