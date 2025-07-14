@@ -80,7 +80,7 @@ wifi:
 
 captive_portal:
 
-improv_serial:
+#improv_serial:
 
 esp32_improv:
   authorizer: none
