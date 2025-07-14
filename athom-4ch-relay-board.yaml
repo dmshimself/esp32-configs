@@ -98,7 +98,6 @@ bluetooth_proxy:
   active: true
 
 remote_receiver:
-  id: remote_receiver
   pin: GPIO16
   dump: all
   tolerance: 50%
